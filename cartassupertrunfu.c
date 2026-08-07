@@ -113,99 +113,101 @@ printf("Densidade populacional: %.2lf hab/km²\n", densidade_populacional2);
 printf("PIB per capita: R$ %.2lf\n", pib_per_capita2);
 printf("Super poder: %.2lf\n", super_poder2);
 
-printf("\n===================== RESULTADO =====================\n");
+//============================================menu de opcoes============================================================
 
-printf("Super poder: ");
-if (super_poder1 > super_poder2) {
-    printf("Carta 1 venceu!\n");
-} else if (super_poder2 > super_poder1) {
-    printf("Carta 2 venceu!\n");
-} else {
-    printf("Empate!\n");
+int opcao;
+
+printf("menu de opcoes:\n");
+printf("1. comparar populacao\n");
+printf("2. comparar area\n");
+printf("3. comparar pib\n");
+printf("4. comparar pontos turisticos\n");
+printf("5. comparar densidade populacional\n");
+printf("6. comparar pib per capita\n");
+printf("7. comparar super poder\n");
+
+printf("escolha uma opcao: ");
+scanf("%d", &opcao);
+
+//=========================comparacao das cartas com base na opcao escolhida=======================
+
+switch (opcao)
+{
+case 1:
+    printf("\ncomparando populacao:\n");
+    if (populacao1 > populacao2) {
+        printf("Carta 1 venceu!\n");
+    } else if (populacao2 > populacao1) {
+        printf("Carta 2 venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
+    break;
+    case 2:
+    printf("\ncomparando area:\n");
+    if (area_em_km1 > area_em_km2) {
+        printf("Carta 1 venceu!\n");
+    } else if (area_em_km2 > area_em_km1) {
+        printf("Carta 2 venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
+    break;
+    case 3:
+    printf("\ncomparando pib:\n");
+    if (pib1 > pib2) {
+        printf("Carta 1 venceu!\n");
+    } else if (pib2 > pib1) {
+        printf("Carta 2 venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
+    break;
+    case 4:
+    printf("\ncomparando pontos turisticos:\n");
+    if (numero_de_pontos_turisticos1 > numero_de_pontos_turisticos2) {
+        printf("Carta 1 venceu!\n");
+    } else if (numero_de_pontos_turisticos2 > numero_de_pontos_turisticos1) {
+        printf("Carta 2 venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
+    break;
+    case 5:
+    printf("\ncomparando densidade populacional:\n");
+    if (densidade_populacional1 < densidade_populacional2) {
+        printf("Carta 1 venceu!\n");
+    } else if (densidade_populacional2 < densidade_populacional1) {
+        printf("Carta 2 venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
+    break;
+    case 6:
+    printf("\ncomparando pib per capita:\n");
+    if (pib_per_capita1 > pib_per_capita2) {
+        printf("Carta 1 venceu!\n");    
+    } else if (pib_per_capita2 > pib_per_capita1) {
+        printf("Carta 2 venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
+    break;
+    case 7:
+    printf("\ncomparando super poder:\n");
+    if (super_poder1 > super_poder2) {
+        printf("Carta 1 venceu!\n");
+    } else if (super_poder2 > super_poder1) {
+        printf("Carta 2 venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
+    break;
+
+default:
+    printf("opcao invalida!\n");
+    break;
 }
 
-printf("Densidade populacional: ");
-if (densidade_populacional1 < densidade_populacional2) {
-    printf("Carta 1 venceu!\n");
-} else if (densidade_populacional2 < densidade_populacional1) {
-    printf("Carta 2 venceu!\n");
-} else {
-    printf("Empate!\n");
-}
-
-printf("PIB per capita: ");
-if (pib_per_capita1 > pib_per_capita2) {
-    printf("Carta 1 venceu!\n");
-} else if (pib_per_capita2 > pib_per_capita1) {
-    printf("Carta 2 venceu!\n");
-} else {
-    printf("Empate!\n");
-}
-
-printf("Pontos turisticos: ");
-if (numero_de_pontos_turisticos1 > numero_de_pontos_turisticos2) {
-    printf("Carta 1 venceu!\n");
-} else if (numero_de_pontos_turisticos2 > numero_de_pontos_turisticos1) {
-    printf("Carta 2 venceu!\n");
-} else {
-    printf("Empate!\n");
-}
-
-printf("PIB: ");
-if (pib1 > pib2) {
-    printf("Carta 1 venceu!\n");
-} else if (pib2 > pib1) {
-    printf("Carta 2 venceu!\n");
-} else {
-    printf("Empate!\n");
-}
-
-printf("Area: ");
-if (area_em_km1 > area_em_km2) {
-    printf("Carta 1 venceu!\n");
-} else if (area_em_km2 > area_em_km1) {
-    printf("Carta 2 venceu!\n");
-} else {
-    printf("Empate!\n");
-}
-
-/* Contagem de vitórias */
-
-int vitorias1 =
-(super_poder1 > super_poder2) +
-(densidade_populacional1 < densidade_populacional2) +
-(pib_per_capita1 > pib_per_capita2) +
-(numero_de_pontos_turisticos1 > numero_de_pontos_turisticos2) +
-(pib1 > pib2) +
-(area_em_km1 > area_em_km2);
-
-int vitorias2 =
-(super_poder2 > super_poder1) +
-(densidade_populacional2 < densidade_populacional1) +
-(pib_per_capita2 > pib_per_capita1) +
-(numero_de_pontos_turisticos2 > numero_de_pontos_turisticos1) +
-(pib2 > pib1) +
-(area_em_km2 > area_em_km1);
-
-printf("==============================================\n");
-printf("Carta numero 1: %s\n", codigo_da_carta1);
-printf("Carta numero 2: %s\n", codigo_da_carta2);
-
-printf("A carta 1 venceu %d vezes\n", vitorias1);
-printf("A carta 2 venceu %d vezes\n", vitorias2);
-
-printf("==============================================\n");
-
-printf("A carta vencedora foi:\n");
-
-if (vitorias1 > vitorias2) {
-    printf("Carta 1\n");
-} else if (vitorias2 > vitorias1) {
-    printf("Carta 2\n");
-} else {
-    printf("Empate!\n");
-}
-
-return 0;
-
+    return 0;
 }
